@@ -25,5 +25,4 @@ jspm_packages
 .node_repl_history
 
 # Generated js files
-/dist
-/public/dist
+/dist/js
