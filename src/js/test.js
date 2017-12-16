@@ -18,60 +18,23 @@ function isEven(value) {
   }
 }
 
-// function createEl(el) {
-//   let element = document.createElement(el);
-// }
-
-// function createNode(n) {
-//   let node = document.createTextNode(n);
-// }
-
-function calcWinDimensions() {
-  let dynWidth = window.innerWidth;
-  let dynHeight = window.innerHeight;
-  let dimensions = [dynWidth, dynHeight];
-  return dimensions;
-}
-
-function displayDimensions() {
-  console.log(calcWinDimensions([0], [1]));
-}
-
-// ----------------------------------- VARIABLES
-
-let dimensionDisplay = document.getElementById('values');
-let newEl = document.createElement('p');
-let newText = document.createTextNode('This is my new text foo!');
-newEl.appendChild(newText);
-dimensionDisplay.appendChild(newEl);
-
-// let para = document.createElement('p');
-// let node = document.createTextNode('This is new.');
-
-// Dynamically get the width and height of the browser viewport
-// let CalcWinDimensions = function(e) {
-//   let dynWidth = window.innerWidth;
-//   let dynHeight = window.innerHeight;
-//   console.log('Width: ' + dynWidth + ' Height: ' + dynHeight);
-// };
-
-window.addEventListener('resize', displayDimensions);
+// window.addEventListener('resize', displayDimensions);
 
 // Tell paper to draw something on the screen
 paper.view.draw();
 
 // Fill canvas-2 with circles
-// let cRepeat;
-// let counter = 0;
-// for (var x = 25; x < 1400; x += 50) {
-//   for (var y = 25; y < 1400; y += 50) {
-//     counter = counter + 1;
-//     var numberType = isEven(counter);
-//     cRepeat = Shape.Circle(x, y, 10);
-//     if (numberType === true) {
-//       cRepeat.fillColor = 'black';
-//     } else {
-//       cRepeat.fillColor = 'pink';
-//     }
-//   }
-// }
+let cRepeat;
+let counter = 0;
+for (var x = 25; x < 700; x += 50) {
+  for (var y = 25; y < 700; y += 50) {
+    counter = counter + 1;
+    var numberType = isEven(counter);
+    cRepeat = Shape.Circle(x, y, 10);
+    if (numberType === true) {
+      cRepeat.fillColor = 'black';
+    } else {
+      cRepeat.fillColor = 'pink';
+    }
+  }
+}
