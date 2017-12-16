@@ -10,6 +10,22 @@ paper.setup(document.getElementById('canvas-2'));
 
 // ----------------------------------- FUNCTIONS
 
+// Calculate window dimensions
+function calcWinDimensions() {
+  var dynWidth = window.innerWidth;
+  var dynHeight = window.innerHeight;
+  var dimensions = [dynWidth, dynHeight];
+  return dimensions;
+}
+
+function winWidth() {
+  // Determine the width of the circles required to fill the page with 20
+  var currentWidth = calcWinDimensions()[0];
+  var circleSize = currentWidth / numCircles;
+  circleSize = Math.floor(circleSize);
+  console.log(circleSize);
+}
+
 // Check to see if value is even or odd
 function isEven(value) {
   if (value % 2 === 0) {
@@ -19,10 +35,7 @@ function isEven(value) {
   }
 }
 
-// window.addEventListener('resize', displayDimensions);
-
-// Tell paper to draw something on the screen
-paper.view.draw();
+var numCircles = 20;
 
 // Fill canvas-2 with circles
 var cRepeat = void 0;
@@ -39,3 +52,8 @@ for (var x = 25; x < 700; x += 50) {
     }
   }
 }
+
+// Tell paper to draw something on the screen
+paper.view.draw();
+
+window.addEventListener('resize', winWidth);
