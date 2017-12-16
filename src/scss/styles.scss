@@ -10,14 +10,11 @@ body {
 
 // Canvas explorations
 
-#main-canvas {
-  height:300px;
-  width:300px;
-  background:black;
+body.paper-experiments {
+  background:white;
 }
 
 #canvas-2 {
-  height:800px;
-  width:800px;
-  background:white;
+  height:100%;
+  width:100%;
 }

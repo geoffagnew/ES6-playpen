@@ -24,10 +24,10 @@ function isEven(value) {
 }
 
 // Fill canvas-2 with circles
-var cRepeat;
-var counter = 0;
-for (var x = 25; x < 800; x += 50) {
-  for (var y = 25; y < 800; y += 50) {
+let cRepeat;
+let counter = 0;
+for (var x = 25; x < 1400; x += 50) {
+  for (var y = 25; y < 1400; y += 50) {
     counter = counter + 1;
     var numberType = isEven(counter);
     cRepeat = Shape.Circle(x, y, 10);
@@ -39,12 +39,5 @@ for (var x = 25; x < 800; x += 50) {
   }
 }
 
-// for (var x = 25; x < 800; x+= 50) {
-//   for (var y = 25; y < 800; y+= 50) {
-//     cRepeat = Shape.Circle(x, y, 10);
-//     cRepeat.fillColor = 'black';
-//     }
-// }
-
-// Tell paper to draw someothing on the screen
+// Tell paper to draw something on the screen
 paper.view.draw();
