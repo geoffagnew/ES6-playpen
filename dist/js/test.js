@@ -6,14 +6,9 @@
 
 paper.install(window);
 // Attach paper.js to the canvas element and prepares it for drawing
-// paper.setup(document.getElementById('main-canvas'));
 paper.setup(document.getElementById('canvas-2'));
 
-// Create the circle object
-// var c1 = Shape.Circle(150, 150, 100);
-// var c2 = Shape.Circle(150, 150, 25);
-// c1.fillColor = 'white';
-// c2.fillColor = 'black';
+// ----------------------------------- FUNCTIONS
 
 // Check to see if value is even or odd
 function isEven(value) {
@@ -24,21 +19,60 @@ function isEven(value) {
   }
 }
 
-// Fill canvas-2 with circles
-var cRepeat = void 0;
-var counter = 0;
-for (var x = 25; x < 1400; x += 50) {
-  for (var y = 25; y < 1400; y += 50) {
-    counter = counter + 1;
-    var numberType = isEven(counter);
-    cRepeat = Shape.Circle(x, y, 10);
-    if (numberType === true) {
-      cRepeat.fillColor = 'black';
-    } else {
-      cRepeat.fillColor = 'pink';
-    }
-  }
+// function createEl(el) {
+//   let element = document.createElement(el);
+// }
+
+// function createNode(n) {
+//   let node = document.createTextNode(n);
+// }
+
+function calcWinDimensions() {
+  var dynWidth = window.innerWidth;
+  var dynHeight = window.innerHeight;
+  var dimensions = [dynWidth, dynHeight];
+  return dimensions;
 }
+
+function displayDimensions() {
+  console.log(calcWinDimensions([0], [1]));
+}
+
+// ----------------------------------- VARIABLES
+
+var dimensionDisplay = document.getElementById('values');
+var newEl = document.createElement('p');
+var newText = document.createTextNode('This is my new text foo!');
+newEl.appendChild(newText);
+dimensionDisplay.appendChild(newEl);
+
+// let para = document.createElement('p');
+// let node = document.createTextNode('This is new.');
+
+// Dynamically get the width and height of the browser viewport
+// let CalcWinDimensions = function(e) {
+//   let dynWidth = window.innerWidth;
+//   let dynHeight = window.innerHeight;
+//   console.log('Width: ' + dynWidth + ' Height: ' + dynHeight);
+// };
+
+window.addEventListener('resize', displayDimensions);
 
 // Tell paper to draw something on the screen
 paper.view.draw();
+
+// Fill canvas-2 with circles
+// let cRepeat;
+// let counter = 0;
+// for (var x = 25; x < 1400; x += 50) {
+//   for (var y = 25; y < 1400; y += 50) {
+//     counter = counter + 1;
+//     var numberType = isEven(counter);
+//     cRepeat = Shape.Circle(x, y, 10);
+//     if (numberType === true) {
+//       cRepeat.fillColor = 'black';
+//     } else {
+//       cRepeat.fillColor = 'pink';
+//     }
+//   }
+// }

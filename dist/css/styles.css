@@ -2,8 +2,9 @@ body {
   background: yellow;
   font-family: helvetica, arial, sans-serif; }
 
-.boneyard {
-  float: left; }
+#values {
+  width: 25%;
+  height: 120px; }
 
 body.paper-experiments {
   background: white; }
