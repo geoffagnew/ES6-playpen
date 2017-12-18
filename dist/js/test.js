@@ -1,6 +1,6 @@
 'use strict';
 
-/* global paper Shape */
+/* global paper Shape, Path, Point */
 
 // Call paper.js in the global scope
 
@@ -21,9 +21,10 @@ function calcWinDimensions() {
 function winWidth() {
   // Determine the width of the circles required to fill the page with 20
   var currentWidth = calcWinDimensions()[0];
-  var circleSize = currentWidth / numCircles;
+  var circleSize = currentWidth / 20;
   circleSize = Math.floor(circleSize);
   console.log(circleSize);
+  return circleSize;
 }
 
 // Check to see if value is even or odd
@@ -35,25 +36,30 @@ function isEven(value) {
   }
 }
 
-var numCircles = 20;
+var myCircle = new Path.Circle(new Point(100, 70), 50);
+myCircle.fillColor = 'black';
 
 // Fill canvas-2 with circles
-var cRepeat = void 0;
-var counter = 0;
-for (var x = 25; x < 700; x += 50) {
-  for (var y = 25; y < 700; y += 50) {
-    counter = counter + 1;
-    var numberType = isEven(counter);
-    cRepeat = Shape.Circle(x, y, 10);
-    if (numberType === true) {
-      cRepeat.fillColor = 'black';
-    } else {
-      cRepeat.fillColor = 'pink';
-    }
-  }
-}
+// let counter = 0;
+// for (var x = 0; x < 20; x += 1) {
+//   Shape.Circle(1, 1, winWidth());
+//   Shape.fillColor = 'black';
+// }
+
+// for (var x = 25; x < 700; x += 50) {
+//   for (var y = 25; y < 700; y += 50) {
+//     counter = counter + 1;
+//     var numberType = isEven(counter);
+//     cRepeat = Shape.Circle(x, y, 10);
+//     if (numberType === true) {
+//       cRepeat.fillColor = 'black';
+//     } else {
+//       cRepeat.fillColor = 'pink';
+//     }
+//   }
+// }
 
 // Tell paper to draw something on the screen
-paper.view.draw();
+// paper.view.draw();
 
 window.addEventListener('resize', winWidth);
