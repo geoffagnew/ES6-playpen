@@ -7,21 +7,23 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ES6 Playpen</title>
+    <title>Simple HTML5 Todo List</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="dist/css/styles.css"></style>
 </head>
-<body>
-  <h1>ES6 — The good stuff</h1>
-  <ul>
-    <li><a href="dom-elements.html">DOM stuff</a></li>
-    <li><a href="objects.html">Objects</a></li>
-    <li><a href="todo-list.html">HTML5 to-do list</a></li>
-    <li><a href="paperjs.html">Paper.js stuff</a></li>
-  </ul>
+<body class="todo-list">
+  <div id="list-wrapper">
+    <h1>My To-do List</h1>
+    <ul id="todo-list" contenteditable="true">
+      <li>List 1</li>
+    </ul>
+    <a href="#" id="save-all">Save all</a>
+    <a href="#" id="clear-all">Clear all</a>
+  </div>
 
-<script src="dist/js/test.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="dist/js/todo-list.js"></script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+$grey-xlight:#f4f4f4;
+$grey-light:#dddddd;
+
+
 body {
   background:yellow;
   font-family:helvetica, arial, sans-serif;
@@ -17,4 +21,31 @@ body.paper-experiments {
 #canvas-2 {
   height:100%;
   width:100%;
+}
+
+
+// To-do list
+body.todo-list {
+  background:purple;
+  #list-wrapper {
+    background:white;
+    width:60%;
+    margin:50px auto 0;
+    padding:25px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
+    h1 {
+      text-align:center;
+    }
+    ul {
+      padding-left:0;
+      border-bottom:1px solid $grey-light;
+      li {
+        list-style:none;
+        border:1px solid $grey-light;
+        border-bottom:none;
+        background:$grey-xlight;
+        padding:20px;
+      }
+    }
+  }
 }
