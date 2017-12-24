@@ -40,12 +40,18 @@ dimensionDisplay.appendChild(newEl);
 
 window.addEventListener('resize', displayDimensions);
 
-// let btnAnswer = getElById('btnAnswer');
-// let dimensionDisplay = getElById('values');
-// let newEl = createEl('p');
-// let newText = createNode('Hell yes you are. No doubt fool.');
-// newEl.appendChild(newText);
+// answer text
+var btnAnswer = getElById('btnAnswer');
+var answerEl = createEl('p');
+var answerText = createNode('Yes, yes you are. There is zero doubt.');
+answerEl.appendChild(answerText);
 
-// btnAnswer.addEventListener('click', function() {
-//   dimensionDisplay.appendChild(newEl);
-// });
+// messing with the background
+var bodyEl = document.body;
+
+btnAnswer.addEventListener('click', function () {
+  btnAnswer.setAttribute('class', 'highlight-button');
+  btnAnswer.textContent = 'LOL';
+  dimensionDisplay.appendChild(answerEl);
+  bodyEl.className = 'activate-lol';
+});

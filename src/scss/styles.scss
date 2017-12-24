@@ -23,6 +23,19 @@ body.paper-experiments {
   width:100%;
 }
 
+// dom experiments
+body#dom-experiments {
+  &.activate-lol {
+    background:blue;
+    color:white;
+  }
+  .highlight-button {
+    padding:8px;
+    background:pink;
+    color:white;
+    display:inline-block;
+  }
+}
 
 // To-do list
 body.todo-list {

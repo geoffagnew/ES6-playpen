@@ -13,6 +13,16 @@ body.paper-experiments {
   height: 100%;
   width: 100%; }
 
+body#dom-experiments.activate-lol {
+  background: blue;
+  color: white; }
+
+body#dom-experiments .highlight-button {
+  padding: 8px;
+  background: pink;
+  color: white;
+  display: inline-block; }
+
 body.todo-list {
   background: purple; }
   body.todo-list #list-wrapper {
