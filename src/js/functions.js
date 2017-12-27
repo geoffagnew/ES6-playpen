@@ -13,3 +13,5 @@ function createEl(el) {
 function createNode(n) {
   return document.createTextNode(n);
 }
+
+export { getElById, createEl, createNode };
