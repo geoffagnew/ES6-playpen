@@ -10,7 +10,7 @@ var playerData = require('./data/raptors.json');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var roster = require('./routes/roster');
+var raptors = require('./routes/raptors');
 
 var app = express();
 
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/roster', roster);
+app.use('/raptors', raptors);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
