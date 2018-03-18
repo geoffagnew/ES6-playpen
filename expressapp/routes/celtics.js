@@ -6,10 +6,10 @@ router.get('/', function(req, res, next) {
   var playerData = req.app.get('appData');
 
   res.render('roster', {
-    title: playerData.teams[0].name,
-    pageId: 'toronto-raptors',
-    teamName: playerData.teams[0].name,
-    players: playerData.teams[0]
+    title: playerData.teams[1].name,
+    pageId: 'boston-celtics',
+    teamName: playerData.teams[1].name,
+    players: playerData.teams[1]
   });
 
 });

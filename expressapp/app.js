@@ -6,11 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 // json data
-var playerData = require('./data/raptors.json');
+var playerData = require('./data/roster.json');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var raptors = require('./routes/raptors');
+var celtics = require('./routes/celtics');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/raptors', raptors);
+app.use('/celtics', celtics);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
