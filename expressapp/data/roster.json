@@ -2,6 +2,7 @@
   {
     "name": "Toronto Raptors",
     "conference": "East",
+    "slug": "toronto-raptors",
     "division": "Atlantic",
     "starters": [
       {
@@ -51,6 +52,7 @@
   {
     "name": "Boston Celtics",
     "conference": "East",
+    "slug": "boston-celtics",
     "division": "Atlantic",
     "starters": [
       {

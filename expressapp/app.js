@@ -22,8 +22,8 @@ app.set('view engine', 'pug');
 // make player data available to the app
 app.set('appData', playerData);
 
-// global variable that contains site title that is shared across the app
 app.locals.siteTitle = 'Node and express prototype';
+app.locals.teamsList = playerData.teams;
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -35,8 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/raptors', raptors);
-app.use('/celtics', celtics);
+app.use('/toronto-raptors', raptors);
+app.use('/boston-celtics', celtics);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

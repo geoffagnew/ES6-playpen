@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 
   res.render('roster', {
     title: playerData.teams[0].name,
-    pageId: 'toronto-raptors',
+    pageId: playerData.teams[0].slug,
     teamName: playerData.teams[0].name,
     players: playerData.teams[0]
   });
