@@ -1,9 +1,9 @@
 doctype html
 html
   head
-    title= title
+    title #{title} – #{siteTitle}
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+  body(id=pageId)
     block content
   script(src='/javascripts/script.js')

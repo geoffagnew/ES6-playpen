@@ -10,6 +10,7 @@ var playerData = require('./data/raptors.json');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var roster = require('./routes/roster');
 
 var app = express();
 
@@ -19,6 +20,9 @@ app.set('view engine', 'pug');
 
 // make player data available to the app
 app.set('appData', playerData);
+
+// global variable that contains site title that is shared across the app
+app.locals.siteTitle = 'Node and express prototype';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -30,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/roster', roster);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

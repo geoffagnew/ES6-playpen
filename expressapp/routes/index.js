@@ -32,7 +32,8 @@ router.get('/', function(req, res, next) {
   // `);
   var myName = 'Bonestorm';
   res.render('index', {
-    title: 'Express',
+    title: 'Home',
+    pageId: 'home',
     name: myName
   });
 });

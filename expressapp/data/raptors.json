@@ -1,5 +1,5 @@
 {
-  "roster": [
+  "starters": [
       {
         "name": "Kyle Lowry",
         "position": "Point Guard"
@@ -19,7 +19,9 @@
       {
         "name": "Jonas Valanciunas",
         "position": "Center"
-      },
+      }
+    ],
+  "bench": [
       {
         "name": "Fred Van Vleet",
         "position": "Point Guard"
