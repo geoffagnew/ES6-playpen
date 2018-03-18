@@ -1,0 +1,100 @@
+{ "teams" : [
+  {
+    "name": "Toronto Raptors",
+    "conference": "East",
+    "division": "Atlantic",
+    "starters": [
+      {
+        "name": "Kyle Lowry",
+        "position": "Point Guard"
+      },
+      {
+        "name": "Demar Derozan",
+        "position": "Shooting Guard"
+      },
+      {
+        "name": "OG Anunoby",
+        "position": "Small Forward"
+      },
+      {
+        "name": "Serge Ibaka",
+        "position": "Power Forward"
+      },
+      {
+        "name": "Jonas Valanciunas",
+        "position": "Center"
+      }
+    ],
+    "bench": [
+      {
+        "name": "Fred Van Vleet",
+        "position": "Point Guard"
+      },
+      {
+        "name": "CJ Miles",
+        "position": "Shooting Guard"
+      },
+      {
+        "name": "Pascal Siakam",
+        "position": "Small Forward"
+      },
+      {
+        "name": "Jakob Poeltl",
+        "position": "Power Forward"
+      },
+      {
+        "name": "Bebe Nogueira",
+        "position": "Center"
+      }
+    ]
+  },
+  {
+    "name": "Boston Celtics",
+    "conference": "East",
+    "division": "Atlantic",
+    "starters": [
+      {
+        "name": "Kyrie Erving",
+        "position": "Point Guard"
+      },
+      {
+        "name": "Gordon Hayward",
+        "position": "Shooting Guard"
+      },
+      {
+        "name": "Jaylen Brown",
+        "position": "Small Forward"
+      },
+      {
+        "name": "Marcus Morris",
+        "position": "Power Forward"
+      },
+      {
+        "name": "Al Horford",
+        "position": "Center"
+      }
+    ],
+    "bench": [
+      {
+        "name": "Marcus Smart",
+        "position": "Point Guard"
+      },
+      {
+        "name": "Tery Rozier",
+        "position": "Shooting Guard"
+      },
+      {
+        "name": "Semi Ojeleye",
+        "position": "Small Forward"
+      },
+      {
+        "name": "Daniel Theis",
+        "position": "Power Forward"
+      },
+      {
+        "name": "Greg Monroe",
+        "position": "Center"
+      }
+    ]
+  }
+]}
