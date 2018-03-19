@@ -10,8 +10,8 @@ var playerData = require('./data/roster.json');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var raptors = require('./routes/raptors');
-var celtics = require('./routes/celtics');
+var teams = require('./routes/team');
+// var celtics = require('./routes/celtics');
 
 var app = express();
 
@@ -35,8 +35,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/toronto-raptors', raptors);
-app.use('/boston-celtics', celtics);
+app.use('/teams', teams);
+// app.use('/toronto-raptors', raptors);
+// app.use('/boston-celtics', celtics);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

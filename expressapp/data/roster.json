@@ -98,5 +98,55 @@
         "position": "Center"
       }
     ]
+  },
+  {
+    "name": "Golden State Warriors",
+    "conference": "West",
+    "slug": "golden-state-warriors",
+    "division": "Pacific",
+    "starters": [
+      {
+        "name": "Steph Cury",
+        "position": "Point Guard"
+      },
+      {
+        "name": "Klay Thompson",
+        "position": "Shooting Guard"
+      },
+      {
+        "name": "Kevin Durant",
+        "position": "Small Forward"
+      },
+      {
+        "name": "Draymond Green",
+        "position": "Power Forward"
+      },
+      {
+        "name": "Zaza Pachulia",
+        "position": "Center"
+      }
+    ],
+    "bench": [
+      {
+        "name": "Nick Young",
+        "position": "Point Guard"
+      },
+      {
+        "name": "Shaun Livingston",
+        "position": "Shooting Guard"
+      },
+      {
+        "name": "Andrea Igoudala",
+        "position": "Small Forward"
+      },
+      {
+        "name": "David West",
+        "position": "Power Forward"
+      },
+      {
+        "name": "JaVale McGee",
+        "position": "Center"
+      }
+    ]
   }
 ]}
