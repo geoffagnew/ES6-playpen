@@ -11,7 +11,8 @@ var playerData = require('./data/roster.json');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var teams = require('./routes/team');
-// var celtics = require('./routes/celtics');
+var feedback = require('./routes/feedback');
+var api = require('./routes/api');
 
 var app = express();
 
@@ -36,9 +37,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/teams', teams);
-// app.use('/toronto-raptors', raptors);
-// app.use('/boston-celtics', celtics);
-
+app.use('/feedback', feedback);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
