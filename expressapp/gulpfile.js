@@ -17,7 +17,7 @@ gulp.task('linter', function(){
     .pipe(eslint({
         rules: {
             'semi': ['error', 'always'],
-            'quotes': ['error', 'double'],
+            'quotes': ['error', 'double', { "allowTemplateLiterals": true }],
             'space-before-function-paren': 'off',
             'no-unused-vars': 'off'
         },

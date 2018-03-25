@@ -1,6 +1,12 @@
 #feedback-container {
   border:1px solid $black;
   .userFeedbackBlock {
+    position:relative;
+    .delete-item {
+      position:absolute;
+      top:20px;
+      right:20px;
+    }
     border-bottom:1px solid $black;
     &:last-of-type {
       border-bottom:none;
