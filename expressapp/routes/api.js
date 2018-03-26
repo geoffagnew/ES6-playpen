@@ -29,7 +29,7 @@ router.post('/', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
   // remove the relevant item from the array, 1 defines the number to remove
   feedbackData.splice(req.params.id, 1);
-  fs.writeFile('data/feedback.json', JSON.stringify(feedbackData), 'utf8', function(error){
+  fs.writeFile('data/feedback.json', JSON.stringify(feedbackData), 'utf8', function(err){
       if(err) {
         console.log(err);
       }

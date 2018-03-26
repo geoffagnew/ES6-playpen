@@ -4,5 +4,6 @@ const $ = require("jquery");
 
 // ------------------------------------------- Imports
 $(document).ready(function(){
-  const customScripts = require("./custom");
+  const userFeedback = require("./feedback");
+  const liveChat = require("./chat");
 });

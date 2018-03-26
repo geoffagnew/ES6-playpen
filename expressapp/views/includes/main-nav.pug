@@ -1,16 +1,25 @@
-nav(class="container pt-0")
+nav(class="container pt-4 main-nav")
   div(class="row")
     div(class="col-md-6")
-      p Eastern conference
-      ul
-        each val, index in teamsList
-          if val.conference == 'East'
-            li
-              <a href="/teams/#{val.slug}">#{val.name}</a>
-    div(class="col-md-6")
-      p Western conference
-      ul
-        each val, index in teamsList
-          if val.conference == 'West'
-            li
-              <a href="/teams/#{val.slug}">#{val.name}</a>
+      ul(class="pl-0")
+        li
+          <a href="/">Home</a>
+        li(class="teams")
+          <a href="/teams">Teams</a>
+            div(class="drop-down")
+              p Eastern conference
+                ul(class="pl-0")
+                  each val, index in teamsList
+                    if val.conference == 'East'
+                      li
+                        <a href="/teams/#{val.slug}">#{val.name}</a>
+              p Western conference
+              ul(class="pl-0")
+                each val, index in teamsList
+                  if val.conference == 'West'
+                    li
+                      <a href="/teams/#{val.slug}">#{val.name}</a>
+        li
+          <a href="/feedback">Feedback</a>
+        li
+          <a href="/chat">Live Chat</a>

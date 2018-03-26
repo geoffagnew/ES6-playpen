@@ -12,6 +12,32 @@ h1, h2, h3, h4 {
 .fine-print {
   font-size: 0.8rem; }
 
+nav.main-nav ul {
+  list-style: none; }
+  nav.main-nav ul li {
+    display: inline-block;
+    padding-right: 10px;
+    margin-right: 20px;
+    border: 1px solid #ffffff;
+    position: relative; }
+  nav.main-nav ul li.teams:hover {
+    border: 1px solid #1c1c1c; }
+    nav.main-nav ul li.teams:hover .drop-down {
+      display: block; }
+
+nav.main-nav .drop-down {
+  position: absolute;
+  left: -1px;
+  border: 1px solid #1c1c1c;
+  background: #ffffff;
+  z-index: 50;
+  padding: 20px;
+  display: none;
+  width: 260px; }
+  nav.main-nav .drop-down ul li {
+    display: block;
+    margin-right: 0; }
+
 #feedback-container {
   border: 1px solid #1c1c1c; }
   #feedback-container .userFeedbackBlock {
@@ -23,3 +49,9 @@ h1, h2, h3, h4 {
       right: 20px; }
     #feedback-container .userFeedbackBlock:last-of-type {
       border-bottom: none; }
+
+.userMessageBlock {
+  border-bottom: 1px solid #1c1c1c; }
+  .userMessageBlock .highlight-user-name {
+    background: #f2f7f7;
+    padding: 3px; }
