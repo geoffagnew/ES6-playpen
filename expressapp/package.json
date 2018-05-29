@@ -10,7 +10,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dompurify": "^1.0.3",
-    "express": "~4.15.5",
+    "express": "^4.16.3",
     "jquery": "^3.3.1",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
@@ -18,17 +18,17 @@
     "socket.io": "^2.0.4"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "babelify": "^8.0.0",
     "browserify": "^14.5.0",
     "gulp": "^3.9.1",
     "gulp-eslint": "^4.0.0",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.2",
     "gulp-util": "^3.0.8",
     "i": "^0.3.6",
-    "npm": "^5.6.0",
+    "npm": "^5.10.0",
     "pump": "^2.0.0",
     "vinyl-source-stream": "^2.0.0"
   }
