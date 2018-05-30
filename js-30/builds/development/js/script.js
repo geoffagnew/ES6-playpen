@@ -1,6 +1,34 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 
+var secondsHand = document.querySelector(".second-hand");
+var minutesHand = document.querySelector(".min-hand");
+var hoursHand = document.querySelector(".hour-hand");
+
+function setDate() {
+  var currentTime = new Date();
+
+  // calculate hours and move hand in the clockface
+  var hours = currentTime.getHours();
+  var hoursDegrees = hours / 12 * 360 + 90;
+  hoursHand.style.transform = "rotate(" + hoursDegrees + "deg)";
+
+  // calculate minutes and move hand in the clockface
+  var minutes = currentTime.getMinutes();
+  var minutesDegrees = minutes / 60 * 360 + 90;
+  minutesHand.style.transform = "rotate(" + minutesDegrees + "deg)";
+
+  // calculate seconds and move hand in the clockface
+  var seconds = currentTime.getSeconds();
+  var secondsDegrees = seconds / 60 * 360 + 90;
+  secondsHand.style.transform = "rotate(" + secondsDegrees + "deg)";
+}
+
+setInterval(setDate, 1000);
+
+},{}],2:[function(require,module,exports){
+"use strict";
+
 // function that controls audio playback
 function playSound(e) {
 	// select the appropriate audio file based on keyCode captured from the user event
@@ -31,11 +59,11 @@ keys.forEach(function (key) {
 	return key.addEventListener("transitionend", removeTransition);
 });
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 "use strict";
 
 // ------------------------------------------- Imports
-// load a custom js module that lives outside node-modules (example)
 var drumMachine = require("./drum-machine");
+var clock = require("./clock");
 
-},{"./drum-machine":1}]},{},[2]);
+},{"./clock":1,"./drum-machine":2}]},{},[3]);
