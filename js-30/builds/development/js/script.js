@@ -22,9 +22,8 @@ var born1500 = inventors.filter(function (inventor) {
   }
 });
 
-born1500.forEach(function (inventor) {
-  return console.log("Name: " + inventor.first + " " + inventor.last + ", Born: " + inventor.year);
-});
+// born1500.forEach(inventor => console.log(`Name: ${inventor.first} ${inventor.last}, Born: ${inventor.year}`));
+
 
 // ----------------- Array.prototype.map()
 // 2. Give us an array of the inventors" first and last names
@@ -34,7 +33,7 @@ born1500.forEach(function (inventor) {
 var names = inventors.map(function (inventor) {
   return inventor.first + " " + inventor.last;
 });
-console.table(names);
+// console.table(names);
 
 // ----------------- Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
@@ -51,14 +50,14 @@ console.table(names);
 var sortedAge = inventors.sort(function (a, b) {
   return a.year > b.year ? 1 : -1;
 });
-console.table(sortedAge);
+// console.table(sortedAge);
 
 // ----------------- Array.prototype.reduce()
 // 4. How many years did all the inventors live?
 var totalYears = inventors.reduce(function (total, inventor) {
   return total + (inventor.passed - inventor.year);
 }, 0);
-console.log(totalYears);
+// console.log(totalYears);
 
 // The for loop does the exact same thing as above, but using the traditional method of reducing values across array items
 // let totalYears = 0;
@@ -177,10 +176,56 @@ keys.forEach(function (key) {
 },{}],5:[function(require,module,exports){
 "use strict";
 
+var panels = document.querySelectorAll(".panel");
+var activePanel = null;
+
+function closeActivePanel() {
+  if (activePanel !== null) {
+    var locatePanel = document.querySelector("." + activePanel[1]);
+    locatePanel.classList.remove("open");
+    activePanel = null;
+  }
+}
+
+function toggleOpen() {
+  var currentSelection = this.classList;
+  if (currentSelection.contains("open")) {
+    closeActivePanel();
+  } else {
+    closeActivePanel();
+    currentSelection.add("open");
+    activePanel = currentSelection;
+  }
+}
+
+panels.forEach(function (panel) {
+  return panel.addEventListener("click", toggleOpen);
+});
+
+// function closeAllPanels() {
+//   panels.forEach(function(panel) {
+//     panel.classList.remove("open");
+//   });
+// }
+
+// function toggleOpen() {
+//   const currentSelection = this.classList;
+//   if(currentSelection.contains("open")) {
+//     closeAllPanels();
+//   } else {
+//     closeAllPanels();
+//     currentSelection.add("open");
+//   }
+// }
+
+},{}],6:[function(require,module,exports){
+"use strict";
+
 // ------------------------------------------- Imports
 var drumMachine = require("./drum-machine");
 var clock = require("./clock");
 var cssVariables = require("./css-variables");
 var arrayCardio1 = require("./array-cardio-1");
+var flexPanels = require("./flex-panels");
 
-},{"./array-cardio-1":1,"./clock":2,"./css-variables":3,"./drum-machine":4}]},{},[5]);
+},{"./array-cardio-1":1,"./clock":2,"./css-variables":3,"./drum-machine":4,"./flex-panels":5}]},{},[6]);

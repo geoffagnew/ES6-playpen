@@ -32,7 +32,7 @@
       }
     });
 
-    born1500.forEach(inventor => console.log(`Name: ${inventor.first} ${inventor.last}, Born: ${inventor.year}`));
+    // born1500.forEach(inventor => console.log(`Name: ${inventor.first} ${inventor.last}, Born: ${inventor.year}`));
 
 
     // ----------------- Array.prototype.map()
@@ -41,7 +41,7 @@
     // Map will take in an array of any length but unlike filter, it will return an array of the SAME length as the original
 
     const names = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
-    console.table(names);
+    // console.table(names);
 
     // ----------------- Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
@@ -56,14 +56,14 @@
 
     // this sort statement is the same as above, just using shorthand arrow functions and a ternerary statement instead of a regular if
     const sortedAge = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
-    console.table(sortedAge);
+    // console.table(sortedAge);
 
     // ----------------- Array.prototype.reduce()
     // 4. How many years did all the inventors live?
     const totalYears = inventors.reduce((total, inventor) => {
       return total + (inventor.passed - inventor.year);
     }, 0);
-    console.log(totalYears);
+    // console.log(totalYears);
 
     // The for loop does the exact same thing as above, but using the traditional method of reducing values across array items
     // let totalYears = 0;
