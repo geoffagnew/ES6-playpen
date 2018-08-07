@@ -83,6 +83,52 @@ var data = ["car", "car", "truck", "truck", "bike", "walk", "car", "van", "bike"
 },{}],2:[function(require,module,exports){
 "use strict";
 
+var people = [{ name: "Wes", year: 1988 }, { name: "Kait", year: 1986 }, { name: "Irv", year: 1970 }, { name: "Lux", year: 2015 }];
+
+var comments = [{ text: "Love this!", id: 523423 }, { text: "Super good", id: 823423 }, { text: "You are the best", id: 2039842 }, { text: "Ramen is my fav food ever", id: 123523 }, { text: "Nice Nice Nice!", id: 542328 }];
+
+// Some and Every Checks
+// Array.prototype.some() // is at least one person 19 or older?
+
+var isAdult = people.some(function (person) {
+  var currentYear = new Date().getFullYear();
+  return currentYear - person.year >= 19; // returns true if at least one value in the array meets the condition
+});
+// console.log(isAdult);
+
+// Array.prototype.every() // is everyone 19 or older?
+var allAdults = people.every(function (person) {
+  var currentYear = new Date().getFullYear();
+  return currentYear - person.year >= 19; // returns true if every value in the array meets the condition
+});
+// console.log(allAdults);
+
+// Array.prototype.find()
+// Find is like filter, but instead returns just the one you are looking for
+// find the comment with the ID of 823423
+var findComment = comments.find(function (comment) {
+  return comment.id === 823423;
+});
+// console.log(findComment);
+
+// Array.prototype.findIndex()
+// Find the comment with this ID
+// delete the comment with the ID of 823423
+var findCommentIdx = comments.findIndex(function (comment, idx) {
+  if (comment.id === 823423) {
+    return comments.splice(idx, 1);
+  }
+});
+// console.table(comments);
+
+},{}],3:[function(require,module,exports){
+"use strict";
+
+console.log("Works?");
+
+},{}],4:[function(require,module,exports){
+"use strict";
+
 var secondsHand = document.querySelector(".second-hand");
 var minutesHand = document.querySelector(".min-hand");
 var hoursHand = document.querySelector(".hour-hand");
@@ -109,7 +155,7 @@ if (hoursHand) {
   setInterval(setDate, 1000);
 }
 
-},{}],3:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 
 var myImg = document.getElementById("mainImg");
@@ -140,7 +186,7 @@ if (myImg) {
 // 	myImg.setAttribute("style", `filter: blur(${blurValue}px);`);
 // }
 
-},{}],4:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 // function that controls audio playback
@@ -173,7 +219,7 @@ keys.forEach(function (key) {
 	return key.addEventListener("transitionend", removeTransition);
 });
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 var panels = document.querySelectorAll(".panel");
@@ -218,7 +264,7 @@ panels.forEach(function (panel) {
 //   }
 // }
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 "use strict";
 
 // ------------------------------------------- Imports
@@ -227,52 +273,8 @@ var clock = require("./clock");
 var cssVariables = require("./css-variables");
 var arrayCardio1 = require("./array-cardio-1");
 var flexPanels = require("./flex-panels");
-var typeAhead = require("./type-ahead");
+// const typeAhead = require("./type-ahead");
+var arrayCardio2 = require("./array-cardio-2");
+var checkAllBoxes = require("./check-all-boxes");
 
-},{"./array-cardio-1":1,"./clock":2,"./css-variables":3,"./drum-machine":4,"./flex-panels":5,"./type-ahead":7}],7:[function(require,module,exports){
-"use strict";
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var cities = [];
-var cityData = "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
-
-fetch(cityData).then(function (res) {
-  return res.json();
-}).then(function (data) {
-  return cities.push.apply(cities, _toConsumableArray(data));
-}).catch(function (error) {
-  return console.log(error);
-});
-
-function findMatches(wordToMatch, cities) {
-  return cities.filter(function (place) {
-    // here we need to figure out if the city or state matches what was searched
-    var regex = new RegExp(wordToMatch, "gi");
-    return place.city.match(regex) || place.state.match(regex);
-  });
-}
-
-function displayResults() {
-  var _this = this;
-
-  var results = findMatches(this.value, cities);
-  if (this.value.length > 0) {
-    var resultsHtml = results.map(function (place) {
-      var regex = new RegExp(_this.value, "gi");
-      var cityName = place.city.replace(regex, "<span class=\"highlight\">" + _this.value + "</span>");
-      var stateName = place.state.replace(regex, "<span class=\"highlight\">" + _this.value + "</span>");
-      return "\n        <li>\n          <strong>" + cityName + "</strong> \n          " + stateName + " \n          <div class=\"population\">Population: " + place.population + "</div>\n        </li>\n      ";
-    }).join("");
-    return resultsContainer.innerHTML = resultsHtml;
-  } else {
-    return resultsContainer.innerHTML = "";
-  }
-}
-
-var resultsContainer = document.querySelector(".suggestions");
-var input = document.querySelector(".search");
-
-input.addEventListener("keyup", displayResults);
-
-},{}]},{},[6]);
+},{"./array-cardio-1":1,"./array-cardio-2":2,"./check-all-boxes":3,"./clock":4,"./css-variables":5,"./drum-machine":6,"./flex-panels":7}]},{},[8]);
