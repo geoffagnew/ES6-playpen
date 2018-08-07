@@ -227,5 +227,51 @@ var clock = require("./clock");
 var cssVariables = require("./css-variables");
 var arrayCardio1 = require("./array-cardio-1");
 var flexPanels = require("./flex-panels");
+var typeAhead = require("./type-ahead");
 
-},{"./array-cardio-1":1,"./clock":2,"./css-variables":3,"./drum-machine":4,"./flex-panels":5}]},{},[6]);
+},{"./array-cardio-1":1,"./clock":2,"./css-variables":3,"./drum-machine":4,"./flex-panels":5,"./type-ahead":7}],7:[function(require,module,exports){
+"use strict";
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var cities = [];
+var cityData = "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+
+fetch(cityData).then(function (res) {
+  return res.json();
+}).then(function (data) {
+  return cities.push.apply(cities, _toConsumableArray(data));
+}).catch(function (error) {
+  return console.log(error);
+});
+
+function findMatches(wordToMatch, cities) {
+  return cities.filter(function (place) {
+    // here we need to figure out if the city or state matches what was searched
+    var regex = new RegExp(wordToMatch, "gi");
+    return place.city.match(regex) || place.state.match(regex);
+  });
+}
+
+function displayResults(wordToMatch, cities) {
+  var results = findMatches(wordToMatch, cities);
+  var resultsHtml = results.map(function (place) {
+    // const regex = new RegExp(this.value, "gi");
+    return "<li><span>" + place.city + "</span> " + place.state + " Population: " + place.population + "</li>";
+  }).join("");
+  return resultsContainer.innerHTML = resultsHtml;
+}
+
+var resultsContainer = document.querySelector(".suggestions");
+var input = document.querySelector(".search");
+
+input.addEventListener("keyup", function (e) {
+  var inputVal = e.target.value;
+  if (inputVal.length > 0) {
+    displayResults(inputVal, cities);
+  } else {
+    return resultsContainer.innerHTML = "";
+  }
+});
+
+},{}]},{},[6]);

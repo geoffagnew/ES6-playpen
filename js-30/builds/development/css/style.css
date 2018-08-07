@@ -261,3 +261,40 @@ body {
 .panel.open {
   font-size: 30px;
   flex: 5; }
+
+html, body.type-ahead {
+  background: #3dd52d; }
+
+.search-wrap {
+  width: 100vw;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center; }
+
+.search-form {
+  background: #ffffff;
+  width: 600px;
+  padding: 50px;
+  margin-top: 100px; }
+  .search-form label {
+    padding-bottom: 10px;
+    display: block; }
+  .search-form input {
+    width: 100%; }
+
+.suggestions {
+  position: relative;
+  top: 20px; }
+  .suggestions li {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid black;
+    font-size: 0.8rem; }
+    .suggestions li span {
+      display: block;
+      font-size: 1rem;
+      font-weight: bold;
+      padding-bottom: 4px; }

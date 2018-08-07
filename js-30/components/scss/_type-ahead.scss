@@ -1,0 +1,44 @@
+html, body.type-ahead {
+  background: $green-bright;
+}
+
+.search-wrap {
+  width: 100vw;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
+  background: $white;
+  width: 600px;
+  padding: 50px;
+  margin-top: 100px;
+  label {
+    padding-bottom: 10px;
+    display: block;
+  }
+  input {
+    width: 100%;
+  }
+}
+
+.suggestions {
+  position: relative;
+  top: 20px;
+  li {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid black;
+    font-size: 0.8rem;
+    span {
+      display: block;
+      font-size: 1rem;
+      font-weight: bold;
+      padding-bottom: 4px;
+    }
+  }
+}
