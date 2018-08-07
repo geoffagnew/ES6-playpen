@@ -31,14 +31,25 @@ html, body.type-ahead {
   top: 20px;
   li {
     display: block;
+    position: relative;
     padding: 8px 0;
     border-bottom: 1px solid black;
     font-size: 0.8rem;
-    span {
+    strong {
       display: block;
       font-size: 1rem;
       font-weight: bold;
       padding-bottom: 4px;
+      text-transform: capitalize;
+    }
+    .population {
+      position: absolute;
+      right: 0;
+      top: 40%;
     }
   }
+}
+
+.highlight {
+  background: orange;
 }

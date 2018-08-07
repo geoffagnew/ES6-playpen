@@ -253,25 +253,26 @@ function findMatches(wordToMatch, cities) {
   });
 }
 
-function displayResults(wordToMatch, cities) {
-  var results = findMatches(wordToMatch, cities);
-  var resultsHtml = results.map(function (place) {
-    // const regex = new RegExp(this.value, "gi");
-    return "<li><span>" + place.city + "</span> " + place.state + " Population: " + place.population + "</li>";
-  }).join("");
-  return resultsContainer.innerHTML = resultsHtml;
+function displayResults() {
+  var _this = this;
+
+  var results = findMatches(this.value, cities);
+  if (this.value.length > 0) {
+    var resultsHtml = results.map(function (place) {
+      var regex = new RegExp(_this.value, "gi");
+      var cityName = place.city.replace(regex, "<span class=\"highlight\">" + _this.value + "</span>");
+      var stateName = place.state.replace(regex, "<span class=\"highlight\">" + _this.value + "</span>");
+      return "\n        <li>\n          <strong>" + cityName + "</strong> \n          " + stateName + " \n          <div class=\"population\">Population: " + place.population + "</div>\n        </li>\n      ";
+    }).join("");
+    return resultsContainer.innerHTML = resultsHtml;
+  } else {
+    return resultsContainer.innerHTML = "";
+  }
 }
 
 var resultsContainer = document.querySelector(".suggestions");
 var input = document.querySelector(".search");
 
-input.addEventListener("keyup", function (e) {
-  var inputVal = e.target.value;
-  if (inputVal.length > 0) {
-    displayResults(inputVal, cities);
-  } else {
-    return resultsContainer.innerHTML = "";
-  }
-});
+input.addEventListener("keyup", displayResults);
 
 },{}]},{},[6]);
