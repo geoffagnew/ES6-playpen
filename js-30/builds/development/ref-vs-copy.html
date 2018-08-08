@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reference vs copy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="white-bg">
+
+
+<script>
+
+  // Arrays work differently than strings, numbers or booleans
+  let starters = ['Lowry', 'Kawhi', 'Green', 'Anunoby', 'Valaciunus'];
+  let team = starters;
+  console.log(starters, team);
+
+  // to update an array without mutating the original use one of the following methods
+
+  // make a copy with the slice array method
+  let team2 = team.slice();
+  team2[1] = 'Mr. Bojangles';
+  console.log(starters, team, team2); 
+
+  // use the ES6 spread method
+  let team3 = [...team];
+  team3[1] = 'Papa Roach';
+  console.log(starters, team, team3); 
+
+  // use the ES6 from method
+  let team4 = Array.from(team);
+  team4[1] = "Captain Kirk";
+  console.log(starters, team, team4);
+
+  // Updating objects works similarly to arrays
+  const person = {
+    name: 'Geoff',
+    age: 38,
+    gender: 'Male'
+  }
+
+  // const captain = person;
+  // captain.number = 99;
+
+  // use the assign method to copy the object. NOTE: This technique is very shallow; it will only go one level deep. Meaning, the cloning will only affect the first level of depth in the object.
+  const captain = Object.assign({}, person, {age: 12, number: 99});
+  console.log(person, captain);
+
+</script>
+</body>
+</html>

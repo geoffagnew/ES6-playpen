@@ -1,9 +1,10 @@
-html, body.type-ahead {
-  background: $green-bright;
+body.type-ahead {
+  background: #ffc600;
+  min-height: 100vh;
 }
 
 .search-wrap {
-  width: 100vw;
+  width: 100%;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
